@@ -1,0 +1,24 @@
+# Local environment
+.env
+.env.*
+
+# Local editor/agent state
+.agent/
+.obsidian/
+Untitled.base
+
+# Generated analysis/cache output
+.graphify_*
+graphify-out/
+app/graphify-out/
+app/.next-dev.*.log
+
+# Local Supabase CLI state
+supabase/.temp/
+
+# Temporary npm/cache workspace
+springscout/
+
+# OS files
+.DS_Store
+Thumbs.db

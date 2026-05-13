@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "catalog": "カタログ",
+    "inquiry": "お問い合わせ",
+    "home": "ホーム"
+  },
+  "home": {
+    "hero_title": "ブラジルバスケットボール人材",
+    "hero_subtitle": "優秀なブラジル人選手、コーチ、スタッフと日本のクラブをつなぐ",
+    "hero_cta": "カタログを見る",
+    "hero_contact": "お問い合わせ",
+    "section_players": "選手",
+    "section_coaches": "コーチ",
+    "section_staff": "テクニカルスタッフ",
+    "value_prop_1_title": "確認済み人材",
+    "value_prop_1_desc": "すべてのプロフィールは個人的に審査され、最新の状態に保たれています",
+    "value_prop_2_title": "ダイレクトコンタクト",
+    "value_prop_2_desc": "アスリートやコーチに直接お問い合わせいただけます",
+    "value_prop_3_title": "バイリンガルプロフィール",
+    "value_prop_3_desc": "すべてのプロフィールは英語と日本語でご覧いただけます"
+  },
+  "catalog": {
+    "title": "人材カタログ",
+    "subtitle": "ブラジルバスケットボール人材を探す",
+    "search_placeholder": "名前やチームで検索...",
+    "filter_search": "検索",
+    "filter_role": "役割",
+    "filter_position": "ポジション",
+    "filter_all": "すべて",
+    "no_results": "条件に一致する人材が見つかりませんでした。",
+    "role_player": "選手",
+    "role_head_coach": "ヘッドコーチ",
+    "role_assistant_coach": "アシスタントコーチ",
+    "role_athletic_trainer": "アスレティックトレーナー",
+    "role_physiotherapist": "理学療法士",
+    "role_team_manager": "チームマネージャー",
+    "role_scout": "スカウト",
+    "role_analyst": "アナリスト",
+    "role_other_staff": "スタッフ",
+    "view_profile": "プロフィールを見る",
+    "error_message": "カタログを読み込めませんでした。ページを再読み込みしてください。"
+  },
+  "profile": {
+    "position": "ポジション",
+    "height": "身長",
+    "weight": "体重",
+    "current_team": "現所属チーム",
+    "nationality": "国籍",
+    "past_teams": "過去のチーム",
+    "highlights": "ハイライト",
+    "biography": "バイオグラフィー",
+    "inquiry_cta": "お問い合わせを送る",
+    "download_pdf": "PDFをダウンロード",
+    "cm": "cm",
+    "kg": "kg",
+    "available": "コンタクト可能",
+    "not_available": "コンタクト不可"
+  },
+  "inquiry": {
+    "title": "お問い合わせを送る",
+    "subtitle": "この選手に興味をお持ちですか？メッセージをお送りください。",
+    "name_label": "お名前",
+    "email_label": "メールアドレス",
+    "organization_label": "クラブ・組織名",
+    "message_label": "メッセージ",
+    "submit": "送信する",
+    "success_title": "送信完了！",
+    "success_message": "2営業日以内にご連絡いたします。",
+    "error_message": "エラーが発生しました。もう一度お試しください。"
+  },
+  "footer": {
+    "tagline": "ブラジルの人材と日本のバスケットボールをつなぐ",
+    "rights": "無断複製を禁じます。"
+  }
+}

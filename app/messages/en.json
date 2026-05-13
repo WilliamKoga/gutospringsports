@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "catalog": "Catalog",
+    "inquiry": "Contact",
+    "home": "Home"
+  },
+  "home": {
+    "hero_title": "Brazilian Basketball Talent",
+    "hero_subtitle": "Connecting elite Brazilian players, coaches, and staff with Japanese clubs",
+    "hero_cta": "View Catalog",
+    "hero_contact": "Get in Touch",
+    "section_players": "Players",
+    "section_coaches": "Coaches",
+    "section_staff": "Technical Staff",
+    "value_prop_1_title": "Verified Talent",
+    "value_prop_1_desc": "All profiles are personally vetted and up-to-date",
+    "value_prop_2_title": "Direct Contact",
+    "value_prop_2_desc": "Reach out directly to athletes and coaches",
+    "value_prop_3_title": "Bilingual Profiles",
+    "value_prop_3_desc": "All profiles available in English and Japanese"
+  },
+  "catalog": {
+    "title": "Talent Catalog",
+    "subtitle": "Browse Brazilian basketball talent",
+    "search_placeholder": "Search by name or team...",
+    "filter_search": "Search",
+    "filter_role": "Role",
+    "filter_position": "Position",
+    "filter_all": "All",
+    "no_results": "No talent found matching your criteria.",
+    "role_player": "Player",
+    "role_head_coach": "Head Coach",
+    "role_assistant_coach": "Asst. Coach",
+    "role_athletic_trainer": "Athletic Trainer",
+    "role_physiotherapist": "Physiotherapist",
+    "role_team_manager": "Team Manager",
+    "role_scout": "Scout",
+    "role_analyst": "Analyst",
+    "role_other_staff": "Staff",
+    "view_profile": "View Profile",
+    "error_message": "Unable to load the catalog. Please refresh the page."
+  },
+  "profile": {
+    "position": "Position",
+    "height": "Height",
+    "weight": "Weight",
+    "current_team": "Current Team",
+    "nationality": "Nationality",
+    "past_teams": "Past Teams",
+    "highlights": "Highlights",
+    "biography": "Biography",
+    "inquiry_cta": "Send Inquiry",
+    "download_pdf": "Download PDF",
+    "cm": "cm",
+    "kg": "kg",
+    "available": "Available for Contact",
+    "not_available": "Not Available"
+  },
+  "inquiry": {
+    "title": "Send an Inquiry",
+    "subtitle": "Interested in working with this talent? Send us a message.",
+    "name_label": "Your Name",
+    "email_label": "Email Address",
+    "organization_label": "Club / Organization",
+    "message_label": "Message",
+    "submit": "Send Inquiry",
+    "success_title": "Inquiry Sent!",
+    "success_message": "We'll be in touch within 2 business days.",
+    "error_message": "Something went wrong. Please try again."
+  },
+  "footer": {
+    "tagline": "Bridging Brazilian talent with Japanese basketball",
+    "rights": "All rights reserved."
+  }
+}
