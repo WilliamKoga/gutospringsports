@@ -53,6 +53,7 @@ export function TalentForm({ initialData, secret }: TalentFormProps) {
     bio: initialData?.bio ?? '',
     bio_jp: initialData?.bio_jp ?? '',
     photo_url: initialData?.photo_url ?? '',
+    highlight_urls: (initialData?.highlight_urls ?? []).join('\n'),
     available_for_contact: initialData?.available_for_contact ?? true,
   });
 
@@ -124,6 +125,10 @@ export function TalentForm({ initialData, secret }: TalentFormProps) {
       available_for_contact: form.available_for_contact,
       past_teams: form.past_teams
         .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean),
+      highlight_urls: form.highlight_urls
+        .split(/\r?\n/)
         .map((s) => s.trim())
         .filter(Boolean),
     };
@@ -394,6 +399,29 @@ export function TalentForm({ initialData, secret }: TalentFormProps) {
             onChange={handleChange}
             className={inputClass}
             placeholder="プロフィール…"
+          />
+        </FormField>
+      </fieldset>
+
+      {/* === SECTION: Highlights === */}
+      <fieldset className="border border-border rounded-xl p-6 space-y-5">
+        <legend className="text-sm font-semibold px-2 text-muted-foreground uppercase tracking-wide">
+          Highlights
+        </legend>
+
+        <FormField
+          label="YouTube Highlight Links"
+          htmlFor="highlight_urls"
+          hint="Add one YouTube URL per line. These will be embedded on the public profile."
+        >
+          <textarea
+            id="highlight_urls"
+            name="highlight_urls"
+            rows={4}
+            value={form.highlight_urls}
+            onChange={handleChange}
+            className={inputClass}
+            placeholder="https://www.youtube.com/watch?v=..."
           />
         </FormField>
       </fieldset>

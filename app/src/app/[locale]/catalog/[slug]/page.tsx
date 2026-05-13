@@ -7,6 +7,42 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from '@/i18n/navigation';
 
+function getSafeExternalUrl(value: string): string {
+  return /^https?:\/\//i.test(value) ? value : `https://${value}`;
+}
+
+function getYouTubeEmbedUrl(value: string): string | null {
+  try {
+    const normalizedValue = getSafeExternalUrl(value);
+    const url = new URL(normalizedValue);
+    const hostname = url.hostname.replace(/^www\./, '');
+    let videoId: string | null = null;
+
+    if (hostname === 'youtu.be') {
+      videoId = url.pathname.split('/').filter(Boolean)[0] ?? null;
+    }
+
+    if (hostname === 'youtube.com' || hostname === 'm.youtube.com') {
+      if (url.pathname === '/watch') {
+        videoId = url.searchParams.get('v');
+      } else {
+        const [kind, id] = url.pathname.split('/').filter(Boolean);
+        if (['embed', 'shorts', 'live'].includes(kind)) {
+          videoId = id ?? null;
+        }
+      }
+    }
+
+    if (!videoId || !/^[A-Za-z0-9_-]{6,}$/.test(videoId)) {
+      return null;
+    }
+
+    return `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&playsinline=1`;
+  } catch {
+    return null;
+  }
+}
+
 export default async function TalentProfilePage(props: { params: Promise<{ slug: string, locale: string }> }) {
   const params = await props.params;
   const t = await getTranslations({ locale: params.locale, namespace: 'profile' });
@@ -124,11 +160,51 @@ export default async function TalentProfilePage(props: { params: Promise<{ slug:
             {highlights.length > 0 && (
               <div className="flex flex-col gap-3">
                 <h3 className="text-xl font-bold border-b pb-2">{t('highlights')}</h3>
-                <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-                  {highlights.map((highlight: string, idx: number) => (
-                    <li key={idx}>{highlight}</li>
-                  ))}
-                </ul>
+                <div className="grid gap-4">
+                  {highlights.map((highlight: string, idx: number) => {
+                    const embedUrl = getYouTubeEmbedUrl(highlight);
+
+                    if (!embedUrl) {
+                      return (
+                        <a
+                          key={`${highlight}-${idx}`}
+                          href={getSafeExternalUrl(highlight)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="rounded-xl border border-border bg-card px-4 py-3 text-sm text-muted-foreground break-all transition hover:text-foreground hover:border-brand/60"
+                        >
+                          {highlight}
+                        </a>
+                      );
+                    }
+
+                    return (
+                      <div
+                        key={`${highlight}-${idx}`}
+                        className="overflow-hidden rounded-xl border border-border bg-card shadow-sm"
+                      >
+                        <div className="aspect-video">
+                          <iframe
+                            src={embedUrl}
+                            title={`${talent.full_name} highlight ${idx + 1}`}
+                            className="h-full w-full"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                            allowFullScreen
+                            referrerPolicy="strict-origin-when-cross-origin"
+                          />
+                        </div>
+                        <a
+                          href={getSafeExternalUrl(highlight)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="block border-t border-border px-4 py-3 text-sm font-medium text-muted-foreground transition hover:text-foreground"
+                        >
+                          Watch on YouTube
+                        </a>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             )}
           </div>
