@@ -4,7 +4,9 @@
 
 # Local editor/agent state
 .agent/
+.agents/
 .obsidian/
+skills-lock.json
 Untitled.base
 
 # Generated analysis/cache output

@@ -107,6 +107,7 @@
   --duration-slow: 400ms;
 
   /* Layout */
+  --container-max: 80rem;
   --container-padding: var(--space-6);
     --header-height: 64px;
   }

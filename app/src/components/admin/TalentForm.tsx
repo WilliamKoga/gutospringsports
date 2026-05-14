@@ -54,7 +54,8 @@ export function TalentForm({ initialData, secret }: TalentFormProps) {
     bio_jp: initialData?.bio_jp ?? '',
     photo_url: initialData?.photo_url ?? '',
     highlight_urls: (initialData?.highlight_urls ?? []).join('\n'),
-    available_for_contact: initialData?.available_for_contact ?? true,
+    featured_on_home: initialData?.featured_on_home ?? false,
+    homepage_order: initialData?.homepage_order?.toString() ?? '',
   });
 
   const [photoPreview, setPhotoPreview] = useState<string | null>(initialData?.photo_url ?? null);
@@ -122,7 +123,6 @@ export function TalentForm({ initialData, secret }: TalentFormProps) {
       slug: form.slug,
       role: form.role,
       nationality: form.nationality,
-      available_for_contact: form.available_for_contact,
       past_teams: form.past_teams
         .split(',')
         .map((s) => s.trim())
@@ -131,6 +131,8 @@ export function TalentForm({ initialData, secret }: TalentFormProps) {
         .split(/\r?\n/)
         .map((s) => s.trim())
         .filter(Boolean),
+      featured_on_home: form.featured_on_home,
+      homepage_order: form.homepage_order ? parseInt(form.homepage_order, 10) : null,
     };
 
     if (form.full_name_jp) payload.full_name_jp = form.full_name_jp;
@@ -426,6 +428,42 @@ export function TalentForm({ initialData, secret }: TalentFormProps) {
         </FormField>
       </fieldset>
 
+      {/* === SECTION: Homepage Feature === */}
+      <fieldset className="border border-border rounded-xl p-6 space-y-5">
+        <legend className="text-sm font-semibold px-2 text-muted-foreground uppercase tracking-wide">
+          Homepage Feature
+        </legend>
+
+        <label className="flex items-center gap-3 cursor-pointer select-none">
+          <input
+            name="featured_on_home"
+            type="checkbox"
+            checked={form.featured_on_home}
+            onChange={handleChange}
+            className="w-4 h-4 accent-orange-500"
+          />
+          <span className="text-sm font-medium">Feature this talent on the homepage</span>
+        </label>
+
+        <FormField
+          label="Homepage Order"
+          htmlFor="homepage_order"
+          hint="Lower numbers appear first. The homepage shows up to 3 featured talents."
+        >
+          <input
+            id="homepage_order"
+            name="homepage_order"
+            type="number"
+            min={1}
+            max={99}
+            value={form.homepage_order}
+            onChange={handleChange}
+            className={inputClass}
+            placeholder="1"
+          />
+        </FormField>
+      </fieldset>
+
       {/* === SECTION: Photo === */}
       <fieldset className="border border-border rounded-xl p-6 space-y-5">
         <legend className="text-sm font-semibold px-2 text-muted-foreground uppercase tracking-wide">
@@ -483,23 +521,6 @@ export function TalentForm({ initialData, secret }: TalentFormProps) {
             )}
           </div>
         </div>
-      </fieldset>
-
-      {/* === SECTION: Settings === */}
-      <fieldset className="border border-border rounded-xl p-6">
-        <legend className="text-sm font-semibold px-2 text-muted-foreground uppercase tracking-wide">
-          Settings
-        </legend>
-        <label className="flex items-center gap-3 mt-4 cursor-pointer select-none">
-          <input
-            name="available_for_contact"
-            type="checkbox"
-            checked={form.available_for_contact}
-            onChange={handleChange}
-            className="w-4 h-4 accent-orange-500"
-          />
-          <span className="text-sm font-medium">Available for contact from clubs</span>
-        </label>
       </fieldset>
 
       {/* === Actions === */}

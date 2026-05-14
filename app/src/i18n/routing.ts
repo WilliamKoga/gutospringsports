@@ -7,7 +7,7 @@ export const routing = defineRouting({
     '/': '/',
     '/catalog': '/catalog',
     '/catalog/[slug]': '/catalog/[slug]',
-    '/inquiry': '/inquiry',
+    '/about': '/about',
   },
 });
 

@@ -23,7 +23,11 @@ export default async function AdminDashboardPage({ params }: AdminDashboardProps
 
   const { data: talents, error } = await supabase
     .from('talents')
-    .select('id, full_name, role, position, current_team, photo_url, created_at')
+    .select(
+      'id, full_name, role, position, current_team, photo_url, featured_on_home, homepage_order, created_at'
+    )
+    .order('featured_on_home', { ascending: false })
+    .order('homepage_order', { ascending: true, nullsFirst: false })
     .order('created_at', { ascending: false });
 
   if (error) {
@@ -61,6 +65,7 @@ export default async function AdminDashboardPage({ params }: AdminDashboardProps
                     <th className="px-6 py-4 font-medium">Role</th>
                     <th className="px-6 py-4 font-medium">Position</th>
                     <th className="px-6 py-4 font-medium">Current Team</th>
+                    <th className="px-6 py-4 font-medium">Home</th>
                     <th className="px-6 py-4 font-medium text-right">Actions</th>
                   </tr>
                 </thead>
@@ -91,6 +96,15 @@ export default async function AdminDashboardPage({ params }: AdminDashboardProps
                         </td>
                         <td className="px-6 py-4 text-muted-foreground">{talent.position ?? '—'}</td>
                         <td className="px-6 py-4 text-muted-foreground">{talent.current_team ?? '—'}</td>
+                        <td className="px-6 py-4">
+                          {talent.featured_on_home ? (
+                            <Badge className="bg-orange-500 text-white hover:bg-orange-500">
+                              Featured #{talent.homepage_order ?? '—'}
+                            </Badge>
+                          ) : (
+                            <span className="text-muted-foreground">—</span>
+                          )}
+                        </td>
                         <td className="px-6 py-4 text-right">
                           <Link
                             href={`/admin/${secret}/edit/${talent.id}`}
@@ -102,7 +116,7 @@ export default async function AdminDashboardPage({ params }: AdminDashboardProps
                     ))
                   ) : (
                     <tr>
-                      <td colSpan={5} className="px-6 py-8 text-center text-muted-foreground">
+                      <td colSpan={6} className="px-6 py-8 text-center text-muted-foreground">
                         <p>No talent profiles yet.</p>
                         <Link href={`/admin/${secret}/new`} className="mt-4 inline-block">
                           <Button variant="outline">Add your first talent</Button>

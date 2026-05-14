@@ -1,23 +1,26 @@
 {
   "nav": {
+    "home": "ホーム",
     "catalog": "カタログ",
-    "inquiry": "お問い合わせ",
-    "home": "ホーム"
+    "about": "概要"
   },
   "home": {
-    "hero_title": "ブラジルバスケットボール人材",
-    "hero_subtitle": "優秀なブラジル人選手、コーチ、スタッフと日本のクラブをつなぐ",
-    "hero_cta": "カタログを見る",
-    "hero_contact": "お問い合わせ",
-    "section_players": "選手",
-    "section_coaches": "コーチ",
-    "section_staff": "テクニカルスタッフ",
-    "value_prop_1_title": "確認済み人材",
-    "value_prop_1_desc": "すべてのプロフィールは個人的に審査され、最新の状態に保たれています",
-    "value_prop_2_title": "ダイレクトコンタクト",
-    "value_prop_2_desc": "アスリートやコーチに直接お問い合わせいただけます",
-    "value_prop_3_title": "バイリンガルプロフィール",
-    "value_prop_3_desc": "すべてのプロフィールは英語と日本語でご覧いただけます"
+    "eyebrow": "SpringSports",
+    "title": "日本のクラブに向けた、ブラジルバスケットボール人材のキュレーション。",
+    "subtitle": "SpringSportsは、バイリンガルのプロフィール、確認された情報、ハイライト映像を通じて、ブラジル人選手・コーチ・スタッフの理解をサポートします。",
+    "catalog_cta": "カタログを見る",
+    "about_cta": "SpringSportsについて",
+    "signal_brazil": "ブラジル人材のパイプライン",
+    "signal_japan": "日本のクラブ文脈に対応",
+    "signal_profiles": "確認しやすいバイリンガルプロフィール",
+    "featured_label": "注目プロフィール",
+    "principles_label": "サイトの役割",
+    "curation_title": "厳選されたプロフィール",
+    "curation_text": "経歴、所属チーム、身体情報、ハイライトをまとめ、評価しやすい形で整理します。",
+    "bridge_title": "ブラジルから日本へ",
+    "bridge_text": "日本のクラブがブラジルのバスケットボール人材を安心して評価できるよう、実務的な情報を重視します。",
+    "profiles_title": "共有しやすい設計",
+    "profiles_text": "各人材には、意思決定者へそのまま共有できる読み取り専用プロフィールがあります。"
   },
   "catalog": {
     "title": "人材カタログ",
@@ -49,27 +52,33 @@
     "past_teams": "過去のチーム",
     "highlights": "ハイライト",
     "biography": "バイオグラフィー",
-    "inquiry_cta": "お問い合わせを送る",
-    "download_pdf": "PDFをダウンロード",
     "cm": "cm",
-    "kg": "kg",
-    "available": "コンタクト可能",
-    "not_available": "コンタクト不可"
-  },
-  "inquiry": {
-    "title": "お問い合わせを送る",
-    "subtitle": "この選手に興味をお持ちですか？メッセージをお送りください。",
-    "name_label": "お名前",
-    "email_label": "メールアドレス",
-    "organization_label": "クラブ・組織名",
-    "message_label": "メッセージ",
-    "submit": "送信する",
-    "success_title": "送信完了！",
-    "success_message": "2営業日以内にご連絡いたします。",
-    "error_message": "エラーが発生しました。もう一度お試しください。"
+    "kg": "kg"
   },
   "footer": {
     "tagline": "ブラジルの人材と日本のバスケットボールをつなぐ",
     "rights": "無断複製を禁じます。"
+  },
+  "about": {
+    "eyebrow": "SpringSportsについて",
+    "title": "ブラジルバスケットボールと日本のクラブをつなぐ、専門的なスカウティングブリッジ。",
+    "intro": "SpringSportsは、ブラジルのバスケットボール人材を日本のクラブがより理解しやすく、評価しやすく、共有しやすくするために作られました。",
+    "mission_label": "ミッション",
+    "mission_title": "私たちの役割",
+    "mission_1": "選手、コーチ、スタッフの情報を、明確で実用的なバイリンガルプロフィールとして整理します。",
+    "mission_2": "目的は情報を並べるだけのマーケットプレイスではありません。クラブ内での検討に必要な背景、メディア、経歴を見やすく届けることです。",
+    "clubs_title": "クラブ向け",
+    "clubs_label": "01",
+    "clubs_text": "より深い評価や面談の前に、ブラジル人材を素早く確認できます。",
+    "talent_title": "人材向け",
+    "talent_label": "02",
+    "talent_text": "英語と日本語で、経歴、プロフィール写真、ハイライトを専門的に提示します。",
+    "context_title": "判断材料",
+    "context_label": "03",
+    "context_text": "プロフィールは、確認、比較、チーム内共有がしやすい構成です。",
+    "how_label": "評価フロー",
+    "how_title": "サイトの使い方",
+    "how_text": "カタログを開き、役割やポジションで絞り込み、確認が必要な人へ個別プロフィールのリンクを共有してください。",
+    "catalog_cta": "カタログを開く"
   }
 }

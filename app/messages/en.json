@@ -1,23 +1,26 @@
 {
   "nav": {
+    "home": "Home",
     "catalog": "Catalog",
-    "inquiry": "Contact",
-    "home": "Home"
+    "about": "About"
   },
   "home": {
-    "hero_title": "Brazilian Basketball Talent",
-    "hero_subtitle": "Connecting elite Brazilian players, coaches, and staff with Japanese clubs",
-    "hero_cta": "View Catalog",
-    "hero_contact": "Get in Touch",
-    "section_players": "Players",
-    "section_coaches": "Coaches",
-    "section_staff": "Technical Staff",
-    "value_prop_1_title": "Verified Talent",
-    "value_prop_1_desc": "All profiles are personally vetted and up-to-date",
-    "value_prop_2_title": "Direct Contact",
-    "value_prop_2_desc": "Reach out directly to athletes and coaches",
-    "value_prop_3_title": "Bilingual Profiles",
-    "value_prop_3_desc": "All profiles available in English and Japanese"
+    "eyebrow": "SpringSports",
+    "title": "Brazilian basketball talent, curated for Japanese clubs.",
+    "subtitle": "SpringSports helps clubs understand Brazilian players, coaches, and staff through bilingual profiles, verified context, and video highlights.",
+    "catalog_cta": "View Catalog",
+    "about_cta": "About SpringSports",
+    "signal_brazil": "Brazilian talent pipeline",
+    "signal_japan": "Built for Japanese club context",
+    "signal_profiles": "Bilingual profiles for review",
+    "featured_label": "Featured talent",
+    "principles_label": "How the site helps",
+    "curation_title": "Curated Profiles",
+    "curation_text": "Each profile is prepared to make evaluation faster, with key bio, team history, measurements, and highlights in one place.",
+    "bridge_title": "Brazil to Japan",
+    "bridge_text": "We focus on the practical details that help Japanese clubs evaluate Brazilian basketball talent with more confidence.",
+    "profiles_title": "Built for Sharing",
+    "profiles_text": "Every talent has a clean read-only profile that can be shared directly with decision makers."
   },
   "catalog": {
     "title": "Talent Catalog",
@@ -49,27 +52,33 @@
     "past_teams": "Past Teams",
     "highlights": "Highlights",
     "biography": "Biography",
-    "inquiry_cta": "Send Inquiry",
-    "download_pdf": "Download PDF",
     "cm": "cm",
-    "kg": "kg",
-    "available": "Available for Contact",
-    "not_available": "Not Available"
-  },
-  "inquiry": {
-    "title": "Send an Inquiry",
-    "subtitle": "Interested in working with this talent? Send us a message.",
-    "name_label": "Your Name",
-    "email_label": "Email Address",
-    "organization_label": "Club / Organization",
-    "message_label": "Message",
-    "submit": "Send Inquiry",
-    "success_title": "Inquiry Sent!",
-    "success_message": "We'll be in touch within 2 business days.",
-    "error_message": "Something went wrong. Please try again."
+    "kg": "kg"
   },
   "footer": {
     "tagline": "Bridging Brazilian talent with Japanese basketball",
     "rights": "All rights reserved."
+  },
+  "about": {
+    "eyebrow": "About SpringSports",
+    "title": "A focused scouting bridge between Brazilian basketball and Japanese clubs.",
+    "intro": "SpringSports was created to make Brazilian basketball talent easier to evaluate, understand, and share with clubs in Japan.",
+    "mission_label": "Mission",
+    "mission_title": "Our role",
+    "mission_1": "We organize player, coach, and staff information into profiles that are clear, bilingual, and useful for real club conversations.",
+    "mission_2": "The goal is not to overwhelm teams with a marketplace. It is to give them the right context, the right media, and a direct view of each professional's background.",
+    "clubs_title": "For clubs",
+    "clubs_label": "01",
+    "clubs_text": "A faster way to review Brazilian talent before deeper evaluation or direct discussions.",
+    "talent_title": "For talent",
+    "talent_label": "02",
+    "talent_text": "A professional profile that presents career context, biography, photos, and highlights in English and Japanese.",
+    "context_title": "For decisions",
+    "context_label": "03",
+    "context_text": "Profiles are structured for scanning, comparing, and sharing internally with staff.",
+    "how_label": "Evaluation flow",
+    "how_title": "How to use the site",
+    "how_text": "Open the catalog, filter by role or position, then share the individual profile link with the people who need to review that talent.",
+    "catalog_cta": "Open Catalog"
   }
 }

@@ -30,8 +30,9 @@ export interface Talent {
   // Media
   photo_url: string | null;
   highlight_urls: string[];
-  // Contact
-  available_for_contact: boolean;
+  // Homepage curation
+  featured_on_home: boolean;
+  homepage_order: number | null;
   // Meta
   created_at: string;
   updated_at: string;
@@ -42,13 +43,4 @@ export interface TalentFilters {
   role?: TalentRole;
   position?: PlayerPosition;
   nationality?: string;
-}
-
-export interface InquiryPayload {
-  talent_id: string;
-  talent_name: string;
-  sender_name: string;
-  sender_email: string;
-  organization: string;
-  message: string;
 }
