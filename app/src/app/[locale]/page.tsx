@@ -40,7 +40,7 @@ export default async function HomePage(props: { params: Promise<{ locale: string
               Elite Division
             </div>
             <p className="sr-only">{t('eyebrow')}</p>
-            <h1 className="font-display text-[44px] font-extrabold uppercase leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
+            <h1 className="font-display text-[clamp(2rem,10vw,2.75rem)] font-extrabold uppercase leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
               GutoSpringSports
               <br />
               <span className="text-[#f14054]">次世代の才能を</span>
@@ -51,13 +51,13 @@ export default async function HomePage(props: { params: Promise<{ locale: string
             <div className="mt-8 flex flex-wrap gap-6">
               <Link
                 href="/catalog"
-                className="inline-flex min-h-12 items-center justify-center bg-primary px-8 py-4 text-xs font-semibold uppercase tracking-[0.16em] text-primary-foreground transition hover:bg-[#f14054]"
+                className="inline-flex min-h-12 items-center justify-center bg-primary px-6 py-4 text-xs font-semibold uppercase tracking-[0.16em] text-primary-foreground transition hover:bg-[#f14054] sm:px-8"
               >
                 {t('catalog_cta')}
               </Link>
               <Link
                 href="/about"
-                className="inline-flex min-h-12 items-center justify-center border border-white/70 px-8 py-4 text-xs font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-white/10"
+                className="inline-flex min-h-12 items-center justify-center border border-white/70 px-6 py-4 text-xs font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-white/10 sm:px-8"
               >
                 {t('about_cta')}
               </Link>
