@@ -1,7 +1,7 @@
 /* Footer Component */
 .footer {
-  border-top: 1px solid var(--color-border);
-  background: var(--color-bg-2);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  background: #000;
   padding: var(--space-10) var(--space-6);
 }
 
@@ -21,19 +21,20 @@
   gap: var(--space-1);
 }
 
-.logo {
-  font-size: var(--text-base);
-  font-weight: 800;
-  color: var(--color-text);
-  letter-spacing: -0.02em;
+.logoImage {
+  width: 15rem;
+  height: auto;
+  display: block;
 }
 
 .tagline {
   font-size: var(--text-xs);
-  color: var(--color-text-3);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .copyright {
   font-size: var(--text-xs);
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { Link } from '@/i18n/navigation';
@@ -13,6 +14,7 @@ export default function Header() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
+  const activePath = pathname.replace(/^\/(en|ja)/, '') || '/';
 
   function toggleLocale() {
     const nextLocale = locale === 'en' ? 'ja' : 'en';
@@ -30,17 +32,33 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link href="/" className={styles.logo}>
-          🏀 <span>SpringSports</span>
+          <Image
+            src="/logo-horizontal-gutospringsports.png"
+            alt="Guto SpringSports"
+            width={1123}
+            height={215}
+            priority
+            className={styles.logoImage}
+          />
         </Link>
 
         <nav className={styles.nav} aria-label="Main navigation">
-          <Link href="/" className={styles.navLink}>
+          <Link
+            href="/"
+            className={`${styles.navLink} ${activePath === '/' ? styles.current : ''}`}
+          >
             {t('home')}
           </Link>
-          <Link href="/catalog" className={styles.navLink}>
+          <Link
+            href="/catalog"
+            className={`${styles.navLink} ${activePath.startsWith('/catalog') ? styles.current : ''}`}
+          >
             {t('catalog')}
           </Link>
-          <Link href="/about" className={styles.navLink}>
+          <Link
+            href="/about"
+            className={`${styles.navLink} ${activePath.startsWith('/about') ? styles.current : ''}`}
+          >
             {t('about')}
           </Link>
         </nav>

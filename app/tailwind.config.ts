@@ -19,6 +19,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)"],
+        display: ["var(--font-display)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -53,6 +57,25 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        brand: {
+          DEFAULT: "var(--color-brand)",
+          foreground: "var(--color-brand-foreground)",
+          dark: "var(--color-brand-dark)",
+          light: "var(--color-brand-light)",
+        },
+        surface: "#faf9f9",
+        "surface-dim": "#dbdad9",
+        "surface-bright": "#faf9f9",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-low": "#f4f3f3",
+        "surface-container": "#efeded",
+        "surface-container-high": "#e9e8e8",
+        "surface-container-highest": "#e3e2e2",
+        "on-surface": "#1b1c1c",
+        "on-surface-variant": "#444748",
+        "outline-variant": "#c4c7c7",
+        outline: "#747878",
+        "on-tertiary-container": "#f14054",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -67,10 +67,10 @@ export function TalentGrid() {
   }, [searchTerm, role, position]);
 
   return (
-    <div className="w-full flex flex-col gap-8">
+    <div className="flex w-full flex-col gap-8">
       {/* Search and Filters */}
-      <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_220px_180px] items-end gap-4 bg-card border p-4 rounded-xl shadow-sm">
-        <label className="flex w-full flex-col gap-1.5 text-sm font-medium text-foreground">
+      <div className="grid grid-cols-1 items-end gap-5 border border-border bg-card p-5 md:grid-cols-[minmax(0,1fr)_220px_180px]">
+        <label className="flex w-full flex-col gap-2 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
           {t('filter_search')}
           <span className="relative block w-full sm:max-w-md">
             <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-muted-foreground">
@@ -92,13 +92,13 @@ export function TalentGrid() {
             <Input
               type="text"
               placeholder={t('search_placeholder')}
-              className="h-9 bg-background pl-9"
+              className="h-11 bg-background pl-9 text-sm font-normal normal-case tracking-normal"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </span>
         </label>
-        <label className="flex flex-col gap-1.5 text-sm font-medium text-foreground">
+        <label className="flex flex-col gap-2 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
           {t('filter_role')}
           <select
             value={role}
@@ -109,7 +109,7 @@ export function TalentGrid() {
                 setPosition('');
               }
             }}
-            className="h-9 rounded-md border border-input bg-background px-3 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-ring"
+            className="h-11 rounded border border-input bg-background px-3 text-sm font-normal normal-case tracking-normal text-foreground shadow-none focus:outline-none focus:ring-1 focus:ring-ring"
           >
             <option value="">{t('filter_all')}</option>
             {ROLES.map((roleValue) => (
@@ -119,13 +119,13 @@ export function TalentGrid() {
             ))}
           </select>
         </label>
-        <label className="flex flex-col gap-1.5 text-sm font-medium text-foreground">
+        <label className="flex flex-col gap-2 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
           {t('filter_position')}
           <select
             value={position}
             onChange={(e) => setPosition(e.target.value)}
             disabled={!!role && role !== 'player'}
-            className="h-9 rounded-md border border-input bg-background px-3 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-ring"
+            className="h-11 rounded border border-input bg-background px-3 text-sm font-normal normal-case tracking-normal text-foreground shadow-none focus:outline-none focus:ring-1 focus:ring-ring disabled:bg-muted disabled:text-muted-foreground"
           >
             <option value="">{t('filter_all')}</option>
             {POSITIONS.map((positionValue) => (
@@ -139,23 +139,23 @@ export function TalentGrid() {
       
       {/* Grid */}
       {error ? (
-        <div className="flex flex-col items-center justify-center py-20 text-center border rounded-xl bg-card border-dashed">
+        <div className="flex flex-col items-center justify-center border border-dashed bg-card py-20 text-center">
           <p className="text-muted-foreground max-w-sm">{t('error_message')}</p>
         </div>
       ) : loading ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {[...Array(8)].map((_, i) => (
-            <div key={i} className="aspect-[3/4] rounded-xl bg-muted animate-pulse"></div>
+            <div key={i} className="aspect-[3/4] bg-muted animate-pulse"></div>
           ))}
         </div>
       ) : talents.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {talents.map(talent => (
             <TalentCard key={talent.id} talent={talent} />
           ))}
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center py-20 text-center border rounded-xl bg-card border-dashed">
+        <div className="flex flex-col items-center justify-center border border-dashed bg-card py-20 text-center">
           <p className="text-muted-foreground max-w-sm">{t('no_results')}</p>
         </div>
       )}

@@ -64,27 +64,27 @@ export default async function TalentProfilePage(props: { params: Promise<{ slug:
   const highlights = talent.highlight_urls ?? [];
 
   return (
-    <div className="min-h-screen bg-background py-12">
-      <div className="container max-w-5xl mx-auto px-4 sm:px-6">
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-5 py-10 sm:px-6 md:py-14">
         
         {/* Back button */}
-        <Link href="/catalog" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors mb-8">
+        <Link href="/catalog" className="mb-8 inline-flex min-h-11 items-center text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:text-foreground">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><path d="m15 18-6-6 6-6"/></svg>
           Back to Catalog
         </Link>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 gap-8 border-y border-border py-8 md:grid-cols-[minmax(280px,360px)_minmax(0,1fr)] md:gap-12">
           
           {/* Left Column: Photo */}
           <div className="flex flex-col gap-6">
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-muted relative shadow-lg">
+            <div className="relative aspect-[3/4] overflow-hidden border border-border bg-muted">
               {talent.photo_url ? (
                 <Image
                   src={talent.photo_url}
                   alt={talent.full_name}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover w-full h-full"
+                  className="h-full w-full object-cover grayscale-[10%]"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-secondary text-secondary-foreground/50">
@@ -95,46 +95,46 @@ export default async function TalentProfilePage(props: { params: Promise<{ slug:
           </div>
 
           {/* Right Column: Details */}
-          <div className="md:col-span-2 flex flex-col gap-8">
+          <div className="flex flex-col gap-8">
             <div>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge className="bg-brand hover:bg-brand text-white uppercase tracking-wider">{roleLabel}</Badge>
+              <div className="mb-5 flex flex-wrap gap-2">
+                <Badge className="border-primary bg-primary text-primary-foreground hover:bg-primary">{roleLabel}</Badge>
                 {talent.position && (
-                  <Badge variant="secondary" className="uppercase tracking-wider">{talent.position}</Badge>
+                  <Badge variant="secondary">{talent.position}</Badge>
                 )}
               </div>
-              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-2">{talent.full_name}</h1>
+              <h1 className="mb-2 text-4xl font-black leading-tight md:text-6xl">{talent.full_name}</h1>
               {talent.full_name_jp && (
                 <h2 className="text-xl md:text-2xl text-muted-foreground">{talent.full_name_jp}</h2>
               )}
             </div>
 
-            <Card className="shadow-sm border-border/50">
-              <CardContent className="p-6 md:p-8">
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-8 gap-x-4">
+            <Card className="border-border">
+              <CardContent className="p-0">
+                <div className="grid grid-cols-1 sm:grid-cols-2">
                   {talent.height_cm && (
-                    <div>
-                      <span className="block text-xs text-muted-foreground uppercase tracking-wider mb-1">{t('height')}</span>
-                      <span className="font-semibold text-lg">{talent.height_cm} <span className="text-sm font-normal text-muted-foreground">{t('cm')}</span></span>
+                    <div className="border-b border-r border-border p-5">
+                      <span className="mb-2 block text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">{t('height')}</span>
+                      <span className="text-lg font-semibold">{talent.height_cm} <span className="text-sm font-normal text-muted-foreground">{t('cm')}</span></span>
                     </div>
                   )}
                   {talent.weight_kg && (
-                    <div>
-                      <span className="block text-xs text-muted-foreground uppercase tracking-wider mb-1">{t('weight')}</span>
-                      <span className="font-semibold text-lg">{talent.weight_kg} <span className="text-sm font-normal text-muted-foreground">{t('kg')}</span></span>
+                    <div className="border-b border-r border-border p-5">
+                      <span className="mb-2 block text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">{t('weight')}</span>
+                      <span className="text-lg font-semibold">{talent.weight_kg} <span className="text-sm font-normal text-muted-foreground">{t('kg')}</span></span>
                     </div>
                   )}
-                  <div>
-                    <span className="block text-xs text-muted-foreground uppercase tracking-wider mb-1">{t('nationality')}</span>
-                    <span className="font-semibold text-lg">{talent.nationality || '-'}</span>
+                  <div className="border-b border-border p-5 sm:border-r">
+                    <span className="mb-2 block text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">{t('nationality')}</span>
+                    <span className="text-lg font-semibold">{talent.nationality || '-'}</span>
                   </div>
-                  <div className="col-span-2 sm:col-span-3 pt-4 border-t border-border/40">
-                    <span className="block text-xs text-muted-foreground uppercase tracking-wider mb-1">{t('current_team')}</span>
-                    <span className="font-semibold text-lg">{talent.current_team || '-'}</span>
+                  <div className="border-b border-border p-5 sm:col-span-2">
+                    <span className="mb-2 block text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">{t('current_team')}</span>
+                    <span className="text-lg font-semibold">{talent.current_team || '-'}</span>
                   </div>
                   {talent.past_teams && talent.past_teams.length > 0 && (
-                    <div className="col-span-2 sm:col-span-3 pt-4 border-t border-border/40">
-                      <span className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">{t('past_teams')}</span>
+                    <div className="p-5 sm:col-span-2">
+                      <span className="mb-3 block text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">{t('past_teams')}</span>
                       <div className="flex flex-wrap gap-2">
                         {talent.past_teams.map((team: string, idx: number) => (
                           <Badge key={idx} variant="outline" className="text-sm font-normal">{team}</Badge>
@@ -148,10 +148,10 @@ export default async function TalentProfilePage(props: { params: Promise<{ slug:
 
             {biography && (
               <div className="flex flex-col gap-3">
-                <h3 className="text-xl font-bold border-b pb-2">{t('biography')}</h3>
-                <div className="prose prose-sm md:prose-base dark:prose-invert max-w-none text-muted-foreground">
+                <h3 className="border-b border-border pb-3 text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">{t('biography')}</h3>
+                <div className="max-w-none text-base leading-8 text-muted-foreground">
                   {biography.split('\n').map((paragraph: string, i: number) => (
-                    <p key={i}>{paragraph}</p>
+                    <p key={i} className="mb-4 last:mb-0">{paragraph}</p>
                   ))}
                 </div>
               </div>
@@ -159,7 +159,7 @@ export default async function TalentProfilePage(props: { params: Promise<{ slug:
             
             {highlights.length > 0 && (
               <div className="flex flex-col gap-3">
-                <h3 className="text-xl font-bold border-b pb-2">{t('highlights')}</h3>
+                <h3 className="border-b border-border pb-3 text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">{t('highlights')}</h3>
                 <div className="grid gap-4">
                   {highlights.map((highlight: string, idx: number) => {
                     const embedUrl = getYouTubeEmbedUrl(highlight);
@@ -171,7 +171,7 @@ export default async function TalentProfilePage(props: { params: Promise<{ slug:
                           href={getSafeExternalUrl(highlight)}
                           target="_blank"
                           rel="noreferrer"
-                          className="rounded-xl border border-border bg-card px-4 py-3 text-sm text-muted-foreground break-all transition hover:text-foreground hover:border-brand/60"
+                          className="break-all border border-border bg-card px-4 py-3 text-sm text-muted-foreground transition hover:border-foreground hover:text-foreground"
                         >
                           {highlight}
                         </a>
@@ -181,7 +181,7 @@ export default async function TalentProfilePage(props: { params: Promise<{ slug:
                     return (
                       <div
                         key={`${highlight}-${idx}`}
-                        className="overflow-hidden rounded-xl border border-border bg-card shadow-sm"
+                        className="overflow-hidden border border-border bg-card"
                       >
                         <div className="aspect-video">
                           <iframe
@@ -197,7 +197,7 @@ export default async function TalentProfilePage(props: { params: Promise<{ slug:
                           href={getSafeExternalUrl(highlight)}
                           target="_blank"
                           rel="noreferrer"
-                          className="block border-t border-border px-4 py-3 text-sm font-medium text-muted-foreground transition hover:text-foreground"
+                          className="block border-t border-border px-4 py-3 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground transition hover:text-foreground"
                         >
                           Watch on YouTube
                         </a>

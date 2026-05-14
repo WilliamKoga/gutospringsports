@@ -32,62 +32,62 @@ export function TalentCard({ talent }: TalentCardProps) {
   return (
     <Link
       href={{ pathname: '/catalog/[slug]', params: { slug: talent.slug } }}
-      className="block transition-transform hover:-translate-y-1"
+      className="group block h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >
-      <Card className="overflow-hidden h-full flex flex-col bg-card hover:border-brand/50 hover:shadow-brand transition-all duration-300">
-        <div className="aspect-[3/4] relative bg-muted w-full overflow-hidden">
+      <Card className="flex h-full flex-col overflow-hidden border-border bg-card transition-colors duration-200 group-hover:border-foreground">
+        <div className="relative aspect-[3/4] w-full overflow-hidden bg-muted">
           {talent.photo_url ? (
             <Image
               src={talent.photo_url}
               alt={talent.full_name}
               fill
               sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-              className="object-cover w-full h-full"
+              className="h-full w-full object-cover grayscale-[15%] transition duration-300 group-hover:scale-[1.02] group-hover:grayscale-0"
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-secondary text-secondary-foreground/50">
               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></svg>
             </div>
           )}
-          <div className="absolute top-3 left-3 flex flex-col gap-2">
-            <Badge variant="default" className="bg-brand hover:bg-brand text-white shadow-lg border-none uppercase tracking-wider text-[10px]">
+          <div className="absolute left-3 top-3 flex flex-col items-start gap-2">
+            <Badge variant="default" className="border-primary bg-primary text-[10px] text-primary-foreground hover:bg-primary">
               {roleLabel}
             </Badge>
             {talent.position && (
-              <Badge variant="secondary" className="shadow-md bg-black/60 text-white border-white/10 backdrop-blur-md">
+              <Badge variant="secondary" className="border border-border bg-card/90 text-[10px] text-foreground backdrop-blur">
                 {talent.position}
               </Badge>
             )}
           </div>
         </div>
         
-        <CardContent className="p-5 flex-grow">
+        <CardContent className="flex-grow p-5">
           <div className="flex flex-col gap-1">
-            <h3 className="font-bold text-lg leading-tight truncate text-foreground">{talent.full_name}</h3>
+            <h3 className="truncate font-display text-lg font-black leading-tight text-foreground">{talent.full_name}</h3>
             {talent.full_name_jp && (
               <p className="text-sm text-muted-foreground truncate">{talent.full_name_jp}</p>
             )}
           </div>
           
-          <div className="mt-4 grid grid-cols-2 gap-x-2 gap-y-3 text-sm">
+          <div className="mt-5 grid grid-cols-2 gap-x-3 gap-y-4 border-t border-border pt-4 text-sm">
             {talent.height_cm && (
               <div className="flex flex-col">
-                <span className="text-[10px] text-muted-foreground uppercase tracking-wider">{t('height')}</span>
-                <span className="font-medium">{talent.height_cm} {t('cm')}</span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">{t('height')}</span>
+                <span className="font-semibold">{talent.height_cm} {t('cm')}</span>
               </div>
             )}
             {talent.weight_kg && (
               <div className="flex flex-col">
-                <span className="text-[10px] text-muted-foreground uppercase tracking-wider">{t('weight')}</span>
-                <span className="font-medium">{talent.weight_kg} {t('kg')}</span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">{t('weight')}</span>
+                <span className="font-semibold">{talent.weight_kg} {t('kg')}</span>
               </div>
             )}
           </div>
         </CardContent>
         
-        <CardFooter className="p-5 pt-0 mt-auto flex flex-col items-start gap-1 border-t border-border/40 pb-4">
-          <span className="text-[10px] text-muted-foreground uppercase tracking-wider">{t('current_team')}</span>
-          <span className="text-sm font-medium truncate w-full">{talent.current_team || '-'}</span>
+        <CardFooter className="mt-auto flex flex-col items-start gap-1 border-t border-border p-5 pt-4">
+          <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">{t('current_team')}</span>
+          <span className="w-full truncate text-sm font-semibold">{talent.current_team || '-'}</span>
         </CardFooter>
       </Card>
     </Link>

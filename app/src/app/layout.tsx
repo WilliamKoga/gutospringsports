@@ -1,10 +1,16 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Chivo, Geist_Mono, Inter } from 'next/font/google';
 import '@/styles/globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
+});
+
+const chivo = Chivo({
+  variable: '--font-chivo',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
 });
 
 const geistMono = Geist_Mono({
@@ -19,6 +25,16 @@ export const metadata: Metadata = {
   },
   description:
     'Connecting elite Brazilian basketball players, coaches, and staff with Japanese clubs.',
+  icons: {
+    icon: [
+      {
+        url: '/logo-icon-gutospringsports.png',
+        type: 'image/png',
+      },
+    ],
+    shortcut: '/logo-icon-gutospringsports.png',
+    apple: '/logo-icon-gutospringsports.png',
+  },
 };
 
 /**
@@ -35,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable}`}
+        className={`${inter.variable} ${chivo.variable} ${geistMono.variable}`}
         suppressHydrationWarning
       >
         {children}
