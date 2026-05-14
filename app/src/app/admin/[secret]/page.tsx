@@ -40,7 +40,7 @@ export default async function AdminDashboardPage({ params }: AdminDashboardProps
         
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">🏀 SpringSports Admin</h1>
+            <h1 className="text-3xl font-bold tracking-tight">GutoSpringSports Admin</h1>
             <p className="text-muted-foreground mt-1">
               {talents?.length ?? 0} talent profiles
             </p>
@@ -94,15 +94,15 @@ export default async function AdminDashboardPage({ params }: AdminDashboardProps
                             {talent.role.replace(/_/g, ' ')}
                           </Badge>
                         </td>
-                        <td className="px-6 py-4 text-muted-foreground">{talent.position ?? '—'}</td>
-                        <td className="px-6 py-4 text-muted-foreground">{talent.current_team ?? '—'}</td>
+                        <td className="px-6 py-4 text-muted-foreground">{talent.position ?? '-'}</td>
+                        <td className="px-6 py-4 text-muted-foreground">{talent.current_team ?? '-'}</td>
                         <td className="px-6 py-4">
                           {talent.featured_on_home ? (
                             <Badge className="bg-orange-500 text-white hover:bg-orange-500">
-                              Featured #{talent.homepage_order ?? '—'}
+                              Featured #{talent.homepage_order ?? '-'}
                             </Badge>
                           ) : (
-                            <span className="text-muted-foreground">—</span>
+                            <span className="text-muted-foreground">-</span>
                           )}
                         </td>
                         <td className="px-6 py-4 text-right">

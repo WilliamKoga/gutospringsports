@@ -23,7 +23,7 @@ export async function createClient() {
               cookieStore.set(name, value, options);
             });
           } catch {
-            // setAll called from a Server Component — safe to ignore
+            // setAll called from a Server Component - safe to ignore
           }
         },
       },
@@ -34,7 +34,7 @@ export async function createClient() {
 /**
  * Admin Supabase client using service role key.
  * ONLY use in server-side code (API routes, Server Actions).
- * Bypasses Row Level Security — handle with care.
+ * Bypasses Row Level Security - handle with care.
  */
 export function createAdminClient() {
   return createServiceClient(

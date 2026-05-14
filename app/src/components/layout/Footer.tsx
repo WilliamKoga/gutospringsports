@@ -12,7 +12,7 @@ export default function Footer() {
         <div className={styles.brand}>
           <Image
             src="/logo-horizontal-white-gutospringsports.png"
-            alt="Guto SpringSports"
+            alt="GutoSpringSports"
             width={1123}
             height={215}
             className={styles.logoImage}
@@ -20,7 +20,7 @@ export default function Footer() {
           <p className={styles.tagline}>{t('tagline')}</p>
         </div>
         <p className={styles.copyright}>
-          © {year} SpringSports. {t('rights')}
+          © {year} GutoSpringSports. {t('rights')}
         </p>
       </div>
     </footer>

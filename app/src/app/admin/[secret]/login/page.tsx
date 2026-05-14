@@ -41,7 +41,7 @@ export default function AdminLoginPage() {
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles.logo}>🏀</div>
-        <h1 className={styles.title}>SpringSports Admin</h1>
+        <h1 className={styles.title}>GutoSpringSports Admin</h1>
         <p className={styles.subtitle}>Enter your admin password to continue</p>
 
         <form onSubmit={handleSubmit} className={styles.form}>

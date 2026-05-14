@@ -41,7 +41,7 @@ export default async function HomePage(props: { params: Promise<{ locale: string
             </div>
             <p className="sr-only">{t('eyebrow')}</p>
             <h1 className="font-display text-[44px] font-extrabold uppercase leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
-              SpringSports
+              GutoSpringSports
               <br />
               <span className="text-[#f14054]">次世代の才能を</span>
             </h1>

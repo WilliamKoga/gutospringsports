@@ -34,7 +34,7 @@ export default function Header() {
         <Link href="/" className={styles.logo}>
           <Image
             src="/logo-horizontal-gutospringsports.png"
-            alt="Guto SpringSports"
+            alt="GutoSpringSports"
             width={1123}
             height={215}
             priority

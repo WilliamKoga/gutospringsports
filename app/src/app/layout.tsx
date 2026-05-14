@@ -20,8 +20,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'SpringSports — Brazilian Basketball Talent',
-    template: '%s | SpringSports',
+    default: 'GutoSpringSports | Brazilian Basketball Talent',
+    template: '%s | GutoSpringSports',
   },
   description:
     'Connecting elite Brazilian basketball players, coaches, and staff with Japanese clubs.',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * Root layout — must render html/body because Next.js requires it at the
+ * Root layout - must render html/body because Next.js requires it at the
  * root level. The [locale] layout will override html lang and body styles.
  * Using suppressHydrationWarning to prevent hydration mismatches from
  * browser extensions or the locale layout rerendering the html element.

@@ -117,7 +117,7 @@ export function TalentForm({ initialData, secret }: TalentFormProps) {
     setSaving(true);
     setError(null);
 
-    // Build payload — strip empty optional fields
+    // Build payload - strip empty optional fields
     const payload: Record<string, unknown> = {
       full_name: form.full_name,
       slug: form.slug,
@@ -283,7 +283,7 @@ export function TalentForm({ initialData, secret }: TalentFormProps) {
                 onChange={handleChange}
                 className={inputClass}
               >
-                <option value="">— Select position —</option>
+                <option value="">- Select position -</option>
                 {POSITIONS.map((p) => (
                   <option key={p} value={p}>
                     {p}
