@@ -40,10 +40,10 @@ export default async function HomePage(props: { params: Promise<{ locale: string
               Elite Division
             </div>
             <p className="sr-only">{t('eyebrow')}</p>
-            <h1 className="font-display text-[clamp(2rem,10vw,2.75rem)] font-extrabold uppercase leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
-              GutoSpringSports
+            <h1 className="max-w-full overflow-wrap-anywhere font-display text-[clamp(1.75rem,8.6vw,2.75rem)] font-extrabold uppercase leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
+              <span className="break-words">{t('hero_line_1')}</span>
               <br />
-              <span className="text-[#f14054]">次世代の才能を</span>
+              <span className="break-words text-[#f14054]">{t('hero_line_2')}</span>
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-[1.6] text-white/75">
               {t('subtitle')}

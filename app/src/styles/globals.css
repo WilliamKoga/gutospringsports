@@ -180,6 +180,10 @@ p {
   border-width: 0;
 }
 
+.overflow-wrap-anywhere {
+  overflow-wrap: anywhere;
+}
+
 /* ── Scrollbar Styling ──────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 6px;
