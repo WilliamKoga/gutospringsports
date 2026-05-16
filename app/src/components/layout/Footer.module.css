@@ -17,17 +17,29 @@
 
 .brand {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
   gap: var(--space-1);
 }
 
-.logoImage {
-  width: 15rem;
-  height: auto;
+.logoMark {
+  width: 2rem;
+  height: 2rem;
   display: block;
 }
 
+.logoText {
+  color: #fff;
+  font-family: var(--font-chivo), sans-serif;
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
 .tagline {
+  flex-basis: 100%;
   font-size: var(--text-xs);
   color: rgba(255, 255, 255, 0.55);
 }

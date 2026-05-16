@@ -20,8 +20,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'GutoSpringSports | Brazilian Basketball Talent',
-    template: '%s | GutoSpringSports',
+    default: 'SpringSports | Brazilian Basketball Talent',
+    template: '%s | SpringSports',
   },
   description:
     'Connecting elite Brazilian basketball players, coaches, and staff with Japanese clubs.',

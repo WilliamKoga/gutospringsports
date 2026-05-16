@@ -5,13 +5,13 @@
     "about": "About"
   },
   "home": {
-    "eyebrow": "GutoSpringSports",
-    "hero_line_1": "GutoSpringSports",
+    "eyebrow": "SpringSports",
+    "hero_line_1": "SpringSports",
     "hero_line_2": "Brazil to Japan",
     "title": "Brazilian basketball talent, curated for Japanese clubs.",
-    "subtitle": "GutoSpringSports helps clubs understand Brazilian players, coaches, and staff through bilingual profiles, verified context, and video highlights.",
+    "subtitle": "SpringSports helps clubs understand Brazilian players, coaches, and staff through bilingual profiles, verified context, and video highlights.",
     "catalog_cta": "View Catalog",
-    "about_cta": "About GutoSpringSports",
+    "about_cta": "About SpringSports",
     "signal_brazil": "Brazilian talent pipeline",
     "signal_japan": "Built for Japanese club context",
     "signal_profiles": "Bilingual profiles for review",
@@ -62,9 +62,9 @@
     "rights": "All rights reserved."
   },
   "about": {
-    "eyebrow": "About GutoSpringSports",
+    "eyebrow": "About SpringSports",
     "title": "A focused scouting bridge between Brazilian basketball and Japanese clubs.",
-    "intro": "GutoSpringSports was created to make Brazilian basketball talent easier to evaluate, understand, and share with clubs in Japan.",
+    "intro": "SpringSports was created to make Brazilian basketball talent easier to evaluate, understand, and share with clubs in Japan.",
     "mission_label": "Mission",
     "mission_title": "Our role",
     "mission_1": "We organize player, coach, and staff information into profiles that are clear, bilingual, and useful for real club conversations.",

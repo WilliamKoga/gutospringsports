@@ -39,13 +39,14 @@ export default function Header() {
       <div className={styles.inner}>
         <Link href="/" className={styles.logo}>
           <Image
-            src="/logo-horizontal-gutospringsports.png"
-            alt="GutoSpringSports"
-            width={1123}
-            height={215}
+            src="/logo-icon-gutospringsports.png"
+            alt=""
+            width={64}
+            height={64}
             priority
-            className={styles.logoImage}
+            className={styles.logoMark}
           />
+          <span className={styles.logoText}>SpringSports</span>
         </Link>
 
         <nav

@@ -11,16 +11,17 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.brand}>
           <Image
-            src="/logo-horizontal-white-gutospringsports.png"
-            alt="GutoSpringSports"
-            width={1123}
-            height={215}
-            className={styles.logoImage}
+            src="/logo-icon-gutospringsports.png"
+            alt=""
+            width={64}
+            height={64}
+            className={styles.logoMark}
           />
+          <span className={styles.logoText}>SpringSports</span>
           <p className={styles.tagline}>{t('tagline')}</p>
         </div>
         <p className={styles.copyright}>
-          © {year} GutoSpringSports. {t('rights')}
+          © {year} SpringSports. {t('rights')}
         </p>
       </div>
     </footer>

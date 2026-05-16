@@ -40,7 +40,7 @@ export default async function AdminDashboardPage({ params }: AdminDashboardProps
         
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">GutoSpringSports Admin</h1>
+            <h1 className="text-3xl font-bold tracking-tight">SpringSports Admin</h1>
             <p className="text-muted-foreground mt-1">
               {talents?.length ?? 0} talent profiles
             </p>
