@@ -24,25 +24,15 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
   white-space: nowrap;
   flex-shrink: 0;
   transition: opacity var(--duration-fast);
 }
 
-.logoMark {
-  width: 2rem;
-  height: 2rem;
+.logoImage {
+  width: clamp(9.75rem, 16vw, 13rem);
+  height: auto;
   display: block;
-}
-
-.logoText {
-  color: var(--color-text);
-  font-family: var(--font-chivo), sans-serif;
-  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: 0;
 }
 
 .logo:hover {
@@ -167,13 +157,8 @@
     min-height: 72px;
   }
 
-  .logoText {
-    font-size: clamp(0.98rem, 5vw, 1.2rem);
-  }
-
-  .logoMark {
-    width: 1.75rem;
-    height: 1.75rem;
+  .logoImage {
+    width: clamp(8rem, 40vw, 10.5rem);
   }
 
   .nav {
@@ -224,13 +209,8 @@
     padding-inline: var(--space-4);
   }
 
-  .logoText {
-    font-size: 0.95rem;
-  }
-
-  .logoMark {
-    width: 1.55rem;
-    height: 1.55rem;
+  .logoImage {
+    width: 7.5rem;
   }
 
   .actions {

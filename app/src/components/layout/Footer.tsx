@@ -11,13 +11,12 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.brand}>
           <Image
-            src="/logo-icon-gutospringsports.png"
-            alt=""
-            width={64}
-            height={64}
-            className={styles.logoMark}
+            src="/springsports-logo-footer.png"
+            alt="SpringSports"
+            width={1508}
+            height={319}
+            className={styles.logoImage}
           />
-          <span className={styles.logoText}>SpringSports</span>
           <p className={styles.tagline}>{t('tagline')}</p>
         </div>
         <p className={styles.copyright}>

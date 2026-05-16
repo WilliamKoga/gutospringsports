@@ -28,12 +28,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/logo-icon-gutospringsports.png',
+        url: '/springsports-icon.png',
         type: 'image/png',
       },
     ],
-    shortcut: '/logo-icon-gutospringsports.png',
-    apple: '/logo-icon-gutospringsports.png',
+    shortcut: '/springsports-icon.png',
+    apple: '/springsports-icon.png',
   },
 };
 
