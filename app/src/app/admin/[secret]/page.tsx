@@ -6,6 +6,7 @@ import LogoutButton from './LogoutButton';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import AdminProfileActions from './AdminProfileActions';
 
 interface AdminDashboardProps {
   params: Promise<{ secret: string }>;
@@ -24,7 +25,7 @@ export default async function AdminDashboardPage({ params }: AdminDashboardProps
   const { data: talents, error } = await supabase
     .from('talents')
     .select(
-      'id, full_name, role, position, current_team, photo_url, featured_on_home, homepage_order, created_at'
+      'id, full_name, slug, role, position, current_team, photo_url, featured_on_home, homepage_order, created_at'
     )
     .order('featured_on_home', { ascending: false })
     .order('homepage_order', { ascending: true, nullsFirst: false })
@@ -105,12 +106,12 @@ export default async function AdminDashboardPage({ params }: AdminDashboardProps
                             <span className="text-muted-foreground">-</span>
                           )}
                         </td>
-                        <td className="px-6 py-4 text-right">
-                          <Link
-                            href={`/admin/${secret}/edit/${talent.id}`}
-                          >
-                            <Button variant="ghost" size="sm">Edit</Button>
-                          </Link>
+                        <td className="px-6 py-4">
+                          <AdminProfileActions
+                            secret={secret}
+                            talentId={talent.id}
+                            slug={talent.slug}
+                          />
                         </td>
                       </tr>
                     ))
