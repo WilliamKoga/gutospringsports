@@ -33,6 +33,8 @@ export interface Talent {
   // Homepage curation
   featured_on_home: boolean;
   homepage_order: number | null;
+  // Catalog curation
+  catalog_order: number | null;
   // Meta
   created_at: string;
   updated_at: string;

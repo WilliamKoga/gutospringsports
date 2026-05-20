@@ -1,6 +1,7 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import { createAdminClient, createClient } from '@/lib/supabase/server';
 import { isAdminAuthenticated } from '@/lib/auth';
+import { getCatalogOrderMode } from '@/lib/catalog-order';
 
 export async function GET(req: NextRequest) {
   try {
@@ -11,7 +12,7 @@ export async function GET(req: NextRequest) {
     const position = searchParams.get('position');
     const search = searchParams.get('search');
     
-    let query = supabase.from('talents').select('*').order('created_at', { ascending: false });
+    let query = supabase.from('talents').select('*');
     
     if (role) {
       query = query.eq('role', role);
@@ -21,6 +22,14 @@ export async function GET(req: NextRequest) {
     }
     if (search) {
       query = query.or(`full_name.ilike.%${search}%,full_name_jp.ilike.%${search}%,slug.ilike.%${search}%`);
+    }
+
+    if (getCatalogOrderMode(searchParams) === 'manual') {
+      query = query
+        .order('catalog_order', { ascending: true, nullsFirst: false })
+        .order('created_at', { ascending: false });
+    } else {
+      query = query.order('created_at', { ascending: false });
     }
     
     const { data, error } = await query;
